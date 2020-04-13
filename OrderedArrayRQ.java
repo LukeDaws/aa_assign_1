@@ -25,7 +25,7 @@ public class OrderedArrayRQ implements Runqueue {
 	int vt_array_length = vt_array.length;
 	int proclabel_array_length = proclabel_array.length;
 	int[] new_vt_array = {};	
-	int position = (Integer) null;
+	int position = -1;
 	String[] new_proclabel_array = {null};
 	
 	
@@ -35,8 +35,8 @@ public class OrderedArrayRQ implements Runqueue {
     	//creates an array of 1
     	
     	proclabel_array = new String[1];
-		vt_array = new int[1];
-    	
+    	vt_array = new int[1];
+		
 
     }  // end of OrderedArrayRQ()
 
@@ -46,22 +46,25 @@ public class OrderedArrayRQ implements Runqueue {
         // Implement me
 
     	
-    	//will check if a the array is empty and if so place the input staight into the array.
-if (proclabel_array == null) {		
-    		
-									 
-			proclabel_array[0] = tokens[0];
-			vt_array[0] = Integer.parseInt(tokens[1]);
-							
+    	//will check if a the array is empty and if so place the input straight into the array.
+    	if (vt_array_length == 0) {		
+    			 
+			proclabel_array[0] = procLabel;
+			vt_array[0] = vt;
+			System.out.println(proclabel_array .length);
+			System.out.println(vt_array.length);
+			System.out.println(proclabel_array[0]);
+			System.out.println(vt_array[0]);	
+			return;
 			//if the array already already has a variables then it will search through it.		
 		} else {
 				
 						
 			 
-			String proclabel_array_input = tokens[0];
+			String proclabel_array_input = procLabel;
 			
 			//this creates a new array that will contain the original array and the new input 
-			int vt_array_input = Integer.parseInt(tokens[1]);
+			int vt_array_input = vt;
 			new_vt_array = new int[vt_array_length + 1];
 			new_proclabel_array = new String[vt_array_length + 1];
 			
@@ -95,7 +98,7 @@ if (proclabel_array == null) {
 			vt_array = new_vt_array;
 			proclabel_array = new_proclabel_array;
 			vt_array_length = vt_array.length;
-			position = (Integer) null;
+			position = -1;
 			
 			}
 		}
@@ -144,8 +147,9 @@ if (proclabel_array == null) {
     	//this will search through the label array
     	for (int i = 0; i < vt_array_length + 1;i++) {
     		//if there is a match it will return true
-    		if (proclabel_array[i] = tokens[0]) {
-    		return true;	
+    		if (proclabel_array[i] = procLabel) {
+    		
+    			return true;	
     		
     		//no match should return false
     		}else {
@@ -161,7 +165,7 @@ if (proclabel_array == null) {
     	//this will search through and try and find the the process
     	for (int i = 0; i < vt_array_length + 1;i++) {
       	//if it finds it then creates a new smaller array and crates a variable of the index position
-    		if (proclabel_array[i] = tokens[0]) {
+    		if (proclabel_array[i] = procLabel) {
     			new_proclabel_array = new String[vt_array_length - 1];
     			new_vt_array = new int[vt_array_length - 1];
     			position = i;
@@ -169,7 +173,7 @@ if (proclabel_array == null) {
     		}
     	}
     		//if position is not null will add variables from old array to new skipping supplied index
-    	if ((Integer)position != null){
+    	if (position != -1){
     	for (int i = 0, k = 0; i < vt_array_length +1; i++);
     		int i;
     		int k;
@@ -188,7 +192,7 @@ if (proclabel_array == null) {
     	vt_array = new_vt_array;
 		proclabel_array = new_proclabel_array;
 		vt_array_length = vt_array.length;
-		position = (Integer) null;
+		position = -1;
     	
     	return true;
     	}
@@ -201,14 +205,14 @@ if (proclabel_array == null) {
     	//this will search through and try and find the the process
     	for (int i = 0; i < vt_array_length + 1;i++) {
       	//if it finds it then creates a new smaller array and crates a variable of the index position
-    		if (proclabel_array[i] = tokens[0]) {
+    		if (proclabel_array[i] = procLabel) {
     			new_proclabel_array = new String[vt_array_length - 1];
     			new_vt_array = new int[vt_array_length - 1];
     			position = i;
     			
     		}
     	}
-    	if ((Integer)position !=null){
+    	if (position != -1){
     		//this should add all the preceding elements in the array
     		int sum;
 			for ( int i = 0; i < position; i++) {
@@ -228,14 +232,14 @@ if (proclabel_array == null) {
     	//this will search through and try and find the the process
     	for (int i = 0; i < vt_array_length + 1;i++) {
       	//if it finds it then creates a new smaller array and crates a variable of the index position
-    		if (proclabel_array[i] = tokens[0]) {
+    		if (proclabel_array[i] = procLabel) {
     			new_proclabel_array = new String[vt_array_length - 1];
     			new_vt_array = new int[vt_array_length - 1];
     			position = i;
     			
     		}
     	}
-    	if ((Integer) position !=  null){
+    	if (position != -1){
     		//this should add all the preceding elements in the array
     		int sum;
 			for ( int i = position +1; i < vt_array_length; i++) {
@@ -253,12 +257,12 @@ if (proclabel_array == null) {
     @Override
     public void printAllProcesses(PrintWriter os) {
         //Implement me
-if(proclabel_array == null) {
+    	if(proclabel_array == null) {
     		
     		return;
     	
     	}else {
-    		for(i = o; i < vt_array_length; i++) {
+    		for(int i = 0; i < vt_array_length; i++) {
     			return;
     			
     		}
