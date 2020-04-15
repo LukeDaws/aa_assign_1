@@ -191,7 +191,7 @@ public class OrderedArrayRQ implements Runqueue {
     	
     	
         return false;
-    	// placeholder, modify this
+    	
     } // end of removeProcess()
 
 
@@ -215,7 +215,7 @@ public class OrderedArrayRQ implements Runqueue {
         	  		
         	}
     	}
-        return -1; // placeholder, modify this
+        return -1; 
     }// end of precedingProcessTime()
 
 
@@ -241,7 +241,7 @@ public class OrderedArrayRQ implements Runqueue {
     		}
     		
     		}
-        return -1; // placeholder, modify this
+        return -1; 
     } // end of precedingProcessTime()
 
 
