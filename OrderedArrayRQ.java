@@ -34,7 +34,7 @@ public class OrderedArrayRQ implements Runqueue {
     @Override
     public void enqueue(String procLabel, int vt) {
         // Implement me
-    	if (proc_array == null) {
+    	if (proc_array == null || proc_array.length == 0) {
             // allocate array of size 1
     		proc_array = new String[1];
             proc_array[0] = procLabel;
