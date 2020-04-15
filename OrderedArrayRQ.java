@@ -40,8 +40,8 @@ public class OrderedArrayRQ implements Runqueue {
             proc_array[0] = procLabel;
             vt_array = new int [1];
             vt_array[0] = vt;
-            
-            
+           
+           
             
             
         }else {
